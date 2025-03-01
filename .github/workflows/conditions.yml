@@ -3,14 +3,16 @@ on: push
 jobs:
     skip-or-run:
         runs-on: ubuntu-latest
+        if: >-
+          ${{github.actor=='yuki-mori-1101' &&
+            contains(github.run_id,'1')}}
         steps:
-            - run: echo ${{github.actor}}
-            - run: echo ${{github.run_id}}
-            - run: echo "Hello"
-              if: ${{contains(github.run_id,'1')}}
+            - run: |
+                echo "${{github.run_id}}"
+                echo "Hello"
     fail:
         runs-on: ubuntu-latest
         steps:
             - run: exit 1
-            - run: echo "Hello"
-              if: ${{failure()}}
+            - if: ${{failure()}}
+              run: echo "Hello"
