@@ -4,9 +4,11 @@ jobs:
     compare:
         runs-on: ubuntu-latest
         steps:
+            - uses: actions/checkout@v4
             - run: |
                 printenv | grep '_FUNC'
                 echo "${CONTEXT}"
+                echo "${HASH}"
               env:
                 CONTAINS_FUNC: ${{contains('Hello','ell')}}
                 STARTS_WITH_FUNC: ${{startsWith('Hello','He')}}
@@ -14,3 +16,4 @@ jobs:
                 FORMAT_FUNC: ${{format('{0},{1}!','Hello','world')}}
                 JOIN_FUNC: ${{join(github.event.*.html_url,',')}}
                 CONTEXT: ${{toJSON(github)}}
+                HASH: ${{hashFiles('.github/workflows/*.yml')}}
