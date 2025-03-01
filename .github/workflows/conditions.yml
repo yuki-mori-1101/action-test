@@ -7,4 +7,4 @@ jobs:
             RUN_ID: GITHUB_RUN_ID
         steps:
             - run: echo "Hello"
-              if: ${{contains("${RUN_ID}",'1')}}
+              if: ${{contains(${RUN_ID},'1')}}
