@@ -1,4 +1,4 @@
-name: Comment
+name: CommentTest
 on: pull_request
 jobs:
     comment:
