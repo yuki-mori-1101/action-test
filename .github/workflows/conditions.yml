@@ -5,4 +5,4 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - run: echo "Hello"
-              if: ${{contains(GITHUB_RUN_ID,'1')}}
+              if: ${{contains(guthub.run_id,'1')}}
