@@ -10,5 +10,5 @@ jobs:
             - run: pwd && ls -la
             - uses: actions/setup-go@v5
               with:
-                go-version-file: .go-version
+                go-version-file: go/.go-version
             - run: go test go/excellent/*.go
