@@ -2,9 +2,15 @@ name: Concurrency
 on: push
 env:
     WORKFLOW: ${{ github.workflow }}
-concurrency: "${WORKFLOW}"
+    BRANCH: ${{ github.ref }}
+concurrency:
+    group: "${WORKFLOW}-${BRANCH}"
+    cancel-in-progress: true
 jobs:
     sleep:
         runs-on: ubuntu-latest
         steps:
-            - run: sleep 120 && pwd
+            - run: |
+                sleep 120
+                echo "${WORKFLOW}"
+                echo "${BRANCH}"
