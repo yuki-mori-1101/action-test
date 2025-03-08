@@ -1,6 +1,6 @@
 name: Add mask
 on: push
-jos:
+jobs:
     log:
         runs-on: ubuntu-latest
         env:
