@@ -1,4 +1,4 @@
-name: Old_ver
+name: Ver
 on: workflow_dispatch
 jobs:
   test:
