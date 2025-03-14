@@ -11,4 +11,4 @@ updates:
           - 4.3.1
       - dependency-name: 'actions/*'
         update-types:
-          - version-update:semver-major
+          - version-update:semver-patch
