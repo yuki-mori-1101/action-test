@@ -1,4 +1,4 @@
-name: Auto merge
+name: Auto_Merge
 on: pull_request
 jobs:
   merge:
